@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Interactive Infographic Builder</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header id="navbar">
+        <div class="navbar-left">
+            <h1>Interactive Infographic Builder</h1>
+        </div>
+        <div class="navbar-right">
+            <button id="undo" title="Undo">↩️ Undo</button>
+            <button id="redo" title="Redo">↪️ Redo</button>
+            <button id="delete-element" title="Delete Selected Element">🗑️ Delete</button>
+            <button id="import-json" title="Import Infographic JSON">📂 Import</button>
+            <input type="file" id="import-json-file" accept=".json" />
+            <button id="zoom-in" title="Zoom In">🔍+</button>
+            <button id="zoom-out" title="Zoom Out">🔍-</button>
+        </div>
+    </header>
+    <main>
+        <section id="toolbar">
+            <button id="add-text" title="Add Text">🅰️ Text</button>
+            <button id="add-rect" title="Add Rectangle">⬛ Rectangle</button>
+            <button id="add-circle" title="Add Circle">⚪ Circle</button>
+            <button id="add-triangle" title="Add Triangle">🔺 Triangle</button>
+            <button id="add-line" title="Add Line">➖ Line</button>
+            <button id="add-image" title="Add Image">🖼️ Image</button>
+            <input type="file" id="image-upload" accept="image/*" />
+            <div id="text-formatting" style="margin-top: 0.5rem;">
+                <button id="bold" title="Bold"><b>B</b></button>
+                <button id="italic" title="Italic"><i>I</i></button>
+                <button id="underline" title="Underline"><u>U</u></button>
+                <button id="align-left" title="Align Left">⬅️</button>
+                <button id="align-center" title="Align Center">↔️</button>
+                <button id="align-right" title="Align Right">➡️</button>
+                <select id="font-family" title="Font Family">
+                    <option value="Arial, sans-serif">Arial</option>
+                    <option value="'Times New Roman', serif">Times New Roman</option>
+                    <option value="'Courier New', monospace">Courier New</option>
+                    <option value="Georgia, serif">Georgia</option>
+                    <option value="Verdana, sans-serif">Verdana</option>
+                </select>
+            </div>
+            <div id="canvas-controls" style="margin-top: 1rem;">
+                <label for="canvas-bg-color">Canvas Background:</label>
+                <input type="color" id="canvas-bg-color" value="#f9f9f9" />
+            </div>
+        </section>
+        <section id="canvas-container">
+            <div id="canvas" contenteditable="false"></div>
+        </section>
+        <section id="properties-panel">
+            <h2>Properties</h2>
+            <div id="properties-content">
+                <p>Select an element to edit its properties</p>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+/* Navbar styles */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    color: white;
+    padding: 0.5rem 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    z-index: 1100;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#navbar .navbar-left h1 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+#navbar .navbar-right button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-left: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+#navbar .navbar-right button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#navbar .navbar-right input[type="file"] {
+    display: none;
+}
+
+/* Adjust main layout to account for fixed navbar */
+main {
+    margin-top: 50px; /* height of navbar */
+    display: flex;
+    height: calc(100vh - 50px);
+    overflow: hidden;
+}
+
+/* Toolbar adjustments */
+#toolbar {
+    background-color: #f0f4f8;
+    padding: 1rem;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    border-right: 1px solid #d1d9e6;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+    font-weight: 600;
+    overflow-y: auto;
+    z-index: 1000;
+    position: relative;
+}
+
+#canvas {
+    flex: 1;
+    margin-left: 200px; /* width of toolbar */
+    margin-right: 220px; /* width of properties panel */
+    background-color: white;
+    position: relative;
+    overflow: auto;
+    max-width: calc(100vw - 420px);
+    box-sizing: border-box;
+}
+
+/* Properties panel remains fixed on right */
+#properties-panel {
+    background-color: #ecf0f1;
+    padding: 1rem;
+    width: 220px;
+    border-left: 1px solid #bdc3c7;
+    overflow-y: auto;
+    position: fixed;
+    top: 50px; /* below navbar */
+    right: 0;
+    bottom: 0;
+}
+
+/* Other styles remain unchanged */
+
+#canvas-container {
+    flex: 1;
+    margin-left: 200px; /* width of toolbar */
+    margin-right: 220px; /* width of properties panel */
+    overflow: auto;
+    position: relative;
+    height: 100%;
+}
+
+#canvas {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
